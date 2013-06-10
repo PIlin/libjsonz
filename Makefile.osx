@@ -5,9 +5,9 @@ HEADERS = jsonz
 CC = gcc
 LD = $(CC)
 
-CFLAGS = -I/opt/local/include -Wall -I. -c
+CFLAGS = -I/opt/local/include -Wall -I. -c -arch i386 -arch x86_64
 
-LDFLAGS =  -w -dynamiclib -install_name /usr/lib/$(TARGET)
+LDFLAGS =  -w -dynamiclib -install_name "@rpath/$(TARGET)" -arch i386 -arch x86_64
 
 
 all: $(TARGET)
